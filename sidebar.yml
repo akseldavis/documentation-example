@@ -5,13 +5,7 @@ entries:
     entries:
       - title: Gemfile
         url: /gemfile.html
-      - title: Repository 
-        url: /repository.html 
   - title: Configuration 
     entries:
-      - title: Rakefile 
-        url: /rakefile.html
       - title: Structure
         url: /structure.html
-  - title: Building Process 
-    url: /building.html 
