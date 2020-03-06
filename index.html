@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <title>Documentation Theme for Jekyll | Documentation Jekyll Theme</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/documentation-example/css/customstyles.css"> 
+
+    <!-- NetApp CSS controls the technical content -->
+    <link rel='stylesheet' href='/documentation-example/css/asciidoc.css' type='text/css'>
+    <link rel='stylesheet' href='/documentation-example/css/boxshadowproperties.css' type='text/css'>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <link rel='stylesheet' href='/documentation-example/css/prism.css' type='text/css'>
+    <!--link rel='stylesheet' href='/documentation-example/css/prism-netapp.css' type='text/css'-->
+
+    <script src='/documentation-example/js/jquery.navgoco.min.js'></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src='/documentation-example/js/toc.js'></script>
+    <!--script src='/documentation-example/js/customscripts.js'></script-->
+
+    <script>
+      $(document).ready(function() {
+          var collapseOnInit = true;
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+
+          //$("#collapseAll").click(function(e) {
+          //    e.preventDefault();
+          //    $("#mysidebar").navgoco('toggle', false);
+          //});
+
+          //$("#expandAll").click(function(e) {
+          //    e.preventDefault();
+          //    $("#mysidebar").navgoco('toggle', true);
+          //});
+
+      });
+
+  </script>
+  <script>
+      /*$(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });*/
+  </script>
+
+
+</head>
+
+
+  <body>
+    <nav class="navbar navbar-default">
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">DocTest</a>
+    </div>
+</nav>
+
+    <div class="container">
+
+      <!-- Content -->
+      <main role="main">
+        <div class="row">
+    <div class="col-md-3 col-lg-2" >
+        
+<ul id="mysidebar" class="nav">
+  
+
+  
+    <li class="active"><a href="index.html">Home</a></li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Installation</a>
+      <ul>
+        
+
+  
+    <li><a href="gemfile.html">Gemfile</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+    <!-- Check Container -->
+    <li class="subfolders">
+      <a href="#">Configuration</a>
+      <ul>
+        
+
+  
+    <li><a href="structure.html">Structure</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+</ul>
+<br/>
+<a class="btn btn-xs btn-default" href="/documentation-example/pdfs/fullsite_template.pdf">Download as PDF</a>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+    </div>
+
+    <div class="col-md-9 col-lg-10">
+        <article class="page-content">
+          <div class="">
+  <h1 class="">Documentation Theme for Jekyll
+  </h1>
+  <a href="/documentation-example/pdfs/pages/index.pdf"><i class="fa fa-file-pdf-o"></i> Download as PDF</a>
+</div>
+<hr/>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Documentation Theme for Jekyll enables you to generate a complete documentation sites using Jekyll and also to generate PDFs files at the same time.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dependencies">Dependencies</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://asciidoctor.org/docs/asciidoctor-pdf/">AsciiDoctor-PDF</a></p>
+</li>
+<li>
+<p><a href="https://rubygems.org/gems/rake_jekyll_asciidoctor_pdf">rake_jekyll_asciidoctor_pdf library</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="get-started">Get started</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="gemfile.html">Install using Bundler</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+        </article>
+    </div>
+</div>
+
+      </main>
+
+    </div>
+
+    <!-- Syntax Highlighting -->
+    <script type="text/javascript" src='/documentation-example/js/prism.js'></script>
+    <script type="text/javascript" src='/documentation-example/js/prism-curl.js'></script>
+
+  </body>
+
+</html>
