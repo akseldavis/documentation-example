@@ -1,6 +1,6 @@
 sudo: false
 dist: trusty
-group: deprecated-2017Q4 # To fix NPM timeout errors
+group: deprecated-2017Q4
 language: ruby
 rvm:
 - 2.4.3
@@ -12,8 +12,7 @@ before_install:
 - mv dependencies/jekyll/prod-build.sh ./ && ./prod-build.sh
 script:
 - bundle install
-- rake buildAll
 - bundle exec rake deploy
 env:
   global:
-    secure: ZEF1JqCrPvYUgMIzjBF2rU2rVEcUAoDYaW9wC5RPjltt/a3dJU+2NqAzZsGxQvcdTtXVXkJQCMG8n8RqSf+VojbYgLXXOjyJ0KmQ6+I0mDWMFf2XU3H11BTxeS26ckad/0L6CMbRVC6M71xbbNHtGHUQRrAGDIatoIgEveW0JeZK4PyV2/bXmHsRlcX87HF2FbwLQVeoYt90gtiKjJzHAA0htS7uNkuuxh1EwOaMjuxQ/LyBhcC1wjmqs4hS2QmSWI/o5w3zsNj9C2Jl/JzHgVLDwR20fHlbN96MvXQTwbRiug1NOTsFL+iL0Tiry3Wgtcv9pkebou9+vA8ziS2prqtAaOpdOEpktQp6/PR0RkmO7lu/ELdAN3L/sfRulLMjOK/3gG3yDIMF8KTXFfxNwuT842pSPKOP8/Zhu7R96HdyrJ2HIZAPmr3PR7HzdxJnLeCj1mZ4ul2HU8ffbS9eqxtxlI0/a6dGF/uyYNHVt7pWVED4xpZ32tKZjZ/4zlpQd39qidGS+qyT6KQZbw9ktNP2JzxQEDIMeOnEU5WhjncikFCgMNKiBo8ouz8p4run+JYG4TUlq0qWwkzqVSx86V2Qw1VF8hJHQ9RN9pqB17mk+Obp4SoJXSNg4q24Dv/FquBRQfU2dE0Vmu50d0WnlErXG0kwu7OzkmVnXJdckis=
+    secure: gB7DFDowCaUXgl0n/wAjQUnTNdcso0xcgTn15HXXOgqMuZ+a9tvoWmbxKlf2P81de6kkpTDQtD4FyAqiuDtiNu/+7xhzKVGNUGTo48waUZdoGVXQauENTWBGo6OCn9v1WdMr3dkLr6h23XelB+j+/zGEy9tMSdblnUrXkv05u66fY2Y5FpaXm/7C4qXRq88neSsVXS1yyFax5sZ/j/owZE2dkfUtMmHtyDXYoS0egJzOXOM4UrGnTKb7JSNEA77SgEdhzEJIGId/XBhmG28YUn3dNGENr7Uc+33rxL1vgfUeF/mHfZPleM39RlR9aaZEGqOPXdyk0LhIl846lhUkCipQfE48ZTL2F0ZIiehYsd37rBYsmSM7i/sAA5VI8Q+tzF1tHNuYzaehp6UjMm+jZDq6vLV7WDoWosjYq5KaAMbs22piSztIAWlyWu4VAJO3tUm5kgHOIDJ5gT1IJnJkmVkbxrvlkLBUL/JDOKX3stl6ht6QV5S6ZPFtVbZWs7r5bVKN+5PrA4w9kVOg4ymfuVpT28RAF2QO8mfW4je5tZcI+TO9lwjKi+PrwHGsUqpH8bwYyeRrp6WbgepvCHNt/GqpUIpFe/8+ZKSwdrw/Vy+OVyZRQaAGs9wdDt63RHDGE4PbXQbRUYg+qDi802ZQxvUVMv+rMHjhRr6+DLZYA9g=
