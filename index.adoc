@@ -1,0 +1,24 @@
+---
+sidebar: sidebar
+permalink: index.html
+summary: Summary
+---
+
+= Documentation Theme for Jekyll 
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+Documentation Theme for Jekyll enables you to generate a complete documentation sites using Jekyll and also to generate PDFs files at the same time.
+
+== Dependencies
+
+* https://asciidoctor.org/docs/asciidoctor-pdf/[AsciiDoctor-PDF]
+* https://rubygems.org/gems/rake_jekyll_asciidoctor_pdf[rake_jekyll_asciidoctor_pdf library]
+
+== Get started
+
+* link:gemfile.html[Install using Bundler]
+

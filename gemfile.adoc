@@ -1,0 +1,19 @@
+---
+sidebar: sidebar
+permalink: gemfile.html
+---
+
+= Directory Structure
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can follow our example repository in the next link
+
+
+https://github.com/ggenzone/JekyllAsciidoctorPDF[GitHub Repository]
+
+
