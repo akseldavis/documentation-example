@@ -13,4 +13,4 @@ before_install:
 script:
 - bundle install
 - rake buildAll
-- rake publish
+- bundle exec rake deploy
