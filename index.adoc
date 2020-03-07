@@ -17,6 +17,7 @@ Documentation Theme for Jekyll enables you to generate a complete documentation 
 
 * https://asciidoctor.org/docs/asciidoctor-pdf/[AsciiDoctor-PDF]
 * https://rubygems.org/gems/rake_jekyll_asciidoctor_pdf[rake_jekyll_asciidoctor_pdf library]
+* https://rubygems.org/gems/rake-jekyll[Rake-Jekyll]
 
 == Get started
 
