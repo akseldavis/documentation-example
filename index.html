@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="">
   <head>
-    <title>Documentation Theme for Jekyll | Documentation Jekyll Theme</title>
+    <title>Rake Jekyll Asciidoctor PDF | Documentation Jekyll Theme</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -159,7 +159,7 @@
     <div class="col-md-9 col-lg-10">
         <article class="page-content">
           <div class="">
-  <h1 class="">Documentation Theme for Jekyll
+  <h1 class="">Rake Jekyll Asciidoctor PDF
   </h1>
   <a href="/documentation-example/pdfs/pages/index.pdf"><i class="fa fa-file-pdf-o"></i> Download as PDF</a>
 </div>
@@ -168,12 +168,193 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Documentation Theme for Jekyll enables you to generate a complete documentation sites using Jekyll and also to generate PDFs files at the same time.</p>
+<p>This gem allows you to generate PDFs from your Asciidoctor files.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><a class="image" href="https://rubygems.org/gems/rake_jekyll_asciidoctor_pdf"><img src="https://img.shields.io/gem/v/rake_jekyll_asciidoctor_pdf.svg?style=flat" alt="Gem Version"></a></span></p>
+</div>
+<div class="paragraph">
+<p>To simplify installation, Asciidoctor is packaged and distributed as a RubyGem (aka gem) to <a href="https://rubygems.org/gems/rake_jekyll_asciidoctor_pdf">RubyGems.org</a>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="dependencies">Dependencies</h2>
+<h2 id="bundler">Bundler</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open your Gemfile in the root folder of your Jekyll project</p>
+</li>
+<li>
+<p>Add the <code>rake_jekyll_asciidoctor_pdf</code> gem to your Gemfile as follows:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>source 'https://rubygems.org'
+gem 'rake_jekyll_asciidoctor_pdf'
+
+# or specify the version explicitly
+# gem 'rake_jekyll_asciidoctor_pdf', '0.0.11'</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Save the Gemfile</p>
+</li>
+<li>
+<p>Open a terminal and install the gem using:</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ bundle</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="rakefile">Rakefile</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open your Rakefile in the root folder of your Jekyll project</p>
+</li>
+<li>
+<p>Add following lines</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>require 'rake_jekyll_asciidoctor_pdf'
+
+RakeJekyllAsciidoctorPdf::BuildTask.new('buildAll') do |t|
+  t.jekyll_config_file = '_config.yml'
+end</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Save the Rakefile</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jekyll-configuration">Jekyll Configuration</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open your _config.yml in the root folder of your Jekyll project</p>
+</li>
+<li>
+<p>Add following lines</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>jap_config:
+    sidebar_file: '_data/sidebar.yml'
+    output_path: 'pdfs'
+    source_path: '.'
+    assets_list: ['media']
+    exclude_list: []
+    fullsite:
+        title: "Main Title"
+        subtitle: "Subtitle"
+        authors: "Author1, Author2"
+        revision: "Revision Date"
+        background_image: 'cover_page_background.jpg'
+    pdf_theme:
+        extends: default
+        role:
+          love:
+            font-color: E0245E
+          wild:
+            font-color: 222222
+            text-transform: uppercase
+            font-style: italic
+            background-color: BCD637
+            border-offset: 1.5
+        header:
+          font_color: 999999
+          height: 0.5in
+          recto:
+            columns: "&lt;40% =20% &gt;40%"
+            right:
+              content: '_{organization}_'
+            center:
+              content: image:media/sample-logo.jpg[pdfwidth=0.25in]
+          verso:
+            columns: $header_recto_columns
+            left:
+              content: $header_recto_right_content
+            center:
+              content: $header_recto_center_content
+        footer:
+          height: 0.45in
+          recto:
+            right:
+              content: '{section-or-chapter-title} | {page-number}'
+          verso:
+            left:
+              content: '{page-number} | {chapter-title}'</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This configuration assume an specific directory structure
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="directory-structure">Directory Structure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A basic Jekyll site usually looks something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>.
+├── _config.yml
+├── _data
+│   └── sidebar.yml
+├── media
+│   └── assets files
+├── pdfs # this folder will be created by rake_jekyll_asciidoctor_pdf
+│   ├── pages/
+│   └── fullsite/
+└── *.adoc # all asciidoc files are in the root level</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="usage">Usage</h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>$ bundle exec rake buildAll</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="links">Links</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -185,18 +366,6 @@
 </li>
 <li>
 <p><a href="https://rubygems.org/gems/rake-jekyll">Rake-Jekyll</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="get-started">Get started</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="gemfile.html">Install using Bundler</a></p>
 </li>
 </ul>
 </div>
