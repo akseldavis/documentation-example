@@ -10,10 +10,17 @@ summary: Summary
 :icons: font
 :linkattrs:
 :imagesdir: ./media/
-:plus: &#43;
+:plus: &#x2713;
 
 [role='lead']
 This is a demonstration of {library}. And this is the preamble of this document.
+icon:check[]
+
+Sign    Name code   Decimal code    Hex code
+☑       &#9745; &#x2611;
+✓       &#10003;    &#x2713;
+✔       &#10004;    &#x2714;
+
 
 [[purpose]]
 .Purpose

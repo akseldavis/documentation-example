@@ -4,22 +4,142 @@ permalink: index.html
 summary: Summary
 ---
 
-= Documentation Theme for Jekyll 
+= Rake Jekyll Asciidoctor PDF
 :hardbreaks:
 :nofooter:
 :icons: font
 :linkattrs:
+:gem-name: rake_jekyll_asciidoctor_pdf
+:gh-name: ggenzone/{gem-name}
+:gh-branch: master
+:badge-style: flat
 :imagesdir: ./media/
+:release-version: 0.0.11
+:source-highlighter: rouge 
 
-Documentation Theme for Jekyll enables you to generate a complete documentation sites using Jekyll and also to generate PDFs files at the same time.
+This gem allows you to generate PDFs from your Asciidoctor files.
 
-== Dependencies
+image:https://img.shields.io/gem/v/{gem-name}.svg?style={badge-style}[Gem Version, link="https://rubygems.org/gems/{gem-name}"]
+
+To simplify installation, Asciidoctor is packaged and distributed as a RubyGem (aka gem) to https://rubygems.org/gems/{gem-name}[RubyGems.org].
+
+==  Bundler
+
+. Open your Gemfile in the root folder of your Jekyll project
+. Add the `{gem-name}` gem to your Gemfile as follows:
++
+[source,subs=attributes+]
+----
+source 'https://rubygems.org'
+gem '{gem-name}'
+
+# or specify the version explicitly
+# gem '{gem-name}', '{release-version}'
+----
+
+. Save the Gemfile
+. Open a terminal and install the gem using:
+
+ $ bundle
+
+
+== Rakefile
+
+. Open your Rakefile in the root folder of your Jekyll project
+. Add following lines 
+[source,Rakefile]
+----
+require 'rake_jekyll_asciidoctor_pdf'
+  
+RakeJekyllAsciidoctorPdf::BuildTask.new('buildAll') do |t|
+  t.jekyll_config_file = '_config.yml'
+end
+----
+
+. Save the Rakefile
+
+== Jekyll Configuration
+
+. Open your _config.yml in the root folder of your Jekyll project
+. Add following lines 
+[source,ruby]
+----
+jap_config:
+    sidebar_file: '_data/sidebar.yml'
+    output_path: 'pdfs'
+    source_path: '.'
+    assets_list: ['media']
+    exclude_list: []
+    fullsite:
+        title: "Main Title"
+        subtitle: "Subtitle"
+        authors: "Author1, Author2"
+        revision: "Revision Date"
+        background_image: 'cover_page_background.jpg'
+    pdf_theme:
+        extends: default
+        role:
+          love:
+            font-color: E0245E
+          wild:
+            font-color: 222222
+            text-transform: uppercase
+            font-style: italic
+            background-color: BCD637
+            border-offset: 1.5
+        header:
+          font_color: 999999
+          height: 0.5in
+          recto:
+            columns: "<40% =20% >40%"
+            right:
+              content: '_{organization}_'
+            center:
+              content: image:media/sample-logo.jpg[pdfwidth=0.25in]
+          verso:
+            columns: $header_recto_columns
+            left:
+              content: $header_recto_right_content
+            center:
+              content: $header_recto_center_content
+        footer:
+          height: 0.45in
+          recto:
+            right:
+              content: '{section-or-chapter-title} | {page-number}'
+          verso:
+            left:
+              content: '{page-number} | {chapter-title}'
+----
+
+NOTE: This configuration assume an specific directory structure 
+
+== Directory Structure
+
+A basic Jekyll site usually looks something like this:
+
+```
+.
+├── _config.yml
+├── _data
+│   └── sidebar.yml
+├── media 
+│   └── assets files 
+├── pdfs # this folder will be created by rake_jekyll_asciidoctor_pdf
+│   ├── pages/
+│   └── fullsite/
+└── *.adoc # all asciidoc files are in the root level 
+```
+
+
+== Usage
+
+ $ bundle exec rake buildAll
+
+== Links
 
 * https://asciidoctor.org/docs/asciidoctor-pdf/[AsciiDoctor-PDF]
 * https://rubygems.org/gems/rake_jekyll_asciidoctor_pdf[rake_jekyll_asciidoctor_pdf library]
 * https://rubygems.org/gems/rake-jekyll[Rake-Jekyll]
 
-== Get started
-
-* link:gemfile.html[Install using Bundler]
 
